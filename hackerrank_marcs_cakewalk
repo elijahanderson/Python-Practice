@@ -1,0 +1,29 @@
+"""Marc loves cupcakes, but he also likes to stay fit. He eats  cupcakes in one sitting, and each cupcake  has a calorie count, . After eating a cupcake with  calories, he must walk at least  (where  is the number cupcakes he has already eaten) miles to maintain his weight.
+
+Given the individual calorie counts for each of the  cupcakes, find and print a long integer denoting the minimum number of miles Marc must walk to maintain his weight. Note that he can eat the cupcakes in any order.
+
+Input Format
+
+The first line contains an integer, , denoting the number of cupcakes.
+The second line contains  space-separated integers describing the respective calorie counts of each cupcake, .
+
+Constraints
+
+Output Format
+
+Print a long integer denoting the minimum number of miles Marc must walk to maintain his weight."""
+
+import sys
+
+n = int(input().strip())
+calories = list(map(int, input().strip().split(' ')))
+
+if n == len(calories):
+    calories = sorted(calories)
+
+    miles = 0
+    for i in range(len(calories)):
+        miles = miles + (n * (2 ** (i)))
+        n -= 1
+    print(miles)
+
