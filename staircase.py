@@ -3,7 +3,6 @@
     at a time.
     Implement a method to count how many possible ways the child can run up the stairs.
 """
-import math
 def staircase(num_stairs) :
     # if there are 1-3 steps, it's easy to determine the number of ways the you can climb them
     if num_stairs == 1 :
